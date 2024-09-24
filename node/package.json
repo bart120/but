@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "mysql2": "^3.11.3",
+    "node": "file:",
     "redis": "^4.7.0"
   }
 }
