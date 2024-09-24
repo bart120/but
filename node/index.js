@@ -19,7 +19,6 @@ async function getProduitFromDB(produit_id) {
 async function getProduit(produit_id) {
     await redisClient.connect();
     const cacheKey = `produit:${produit_id}`;
-
     //chercher dans le redis
     return new Promise((resolve, reject) => {
 
@@ -34,7 +33,6 @@ async function getProduit(produit_id) {
                 return resolve(produit);
             }
         });
-
     });
 }
 
