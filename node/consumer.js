@@ -14,7 +14,6 @@ function consume() {
     redisClient.xRead(redis.commandOptions({ isolated: true }),
         [{ key: 'produit_stream', id: '0-0' }], { COUNT: 2, BLOCK: 5000 }).then((stream) => {
             if (stream) {
-                console.log(stream);
                 const messages = stream[0].messages;
                 messages.forEach((message) => {
                     console.log('Message reçu :', message.message);
